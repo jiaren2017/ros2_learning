@@ -1,0 +1,34 @@
+# --- ROS 2 Specific ---
+build/
+install/
+log/
+.catkin_tools/
+.colcon/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# --- C++ ---
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.exe
+
+# --- IDEs (VS Code) ---
+.vscode/
+.history/
+*.code-workspace
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+*~
+*.swp
