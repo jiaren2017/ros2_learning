@@ -44,8 +44,22 @@ ament_target_dependencies(pose_publisher
   turtlesim)
 
 
+
+# --- Executable: pose_subscriber ---
+add_executable(pose_subscriber src/pose_subscriber.cpp)
+
+ament_target_dependencies(pose_subscriber
+  rclcpp
+  geometry_msgs)
+
+
+
+
+
 # --- Install rules ---
-install(TARGETS pose_publisher
+install(TARGETS 
+  pose_publisher
+  pose_subscriber
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
