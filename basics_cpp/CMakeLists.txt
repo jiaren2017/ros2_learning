@@ -49,7 +49,6 @@ ament_target_dependencies(pose_publisher
 
 # --- Executable: pose_subscriber ---
 add_executable(pose_subscriber src/pose_subscriber.cpp)
-
 ament_target_dependencies(pose_subscriber
   rclcpp
   geometry_msgs)
@@ -62,12 +61,19 @@ ament_target_dependencies(turtle_reset_client
   std_srvs)
 
 
+# --- Executable: turtle_mover ---
+add_executable(turtle_mover src/turtle_mover.cpp)
+ament_target_dependencies(turtle_mover 
+  rclcpp 
+  geometry_msgs)
+
 
 # --- Install rules ---
 install(TARGETS 
   pose_publisher
   pose_subscriber
   turtle_reset_client
+  turtle_mover
   DESTINATION lib/${PROJECT_NAME})
 
 
