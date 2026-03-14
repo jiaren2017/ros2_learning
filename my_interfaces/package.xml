@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>my_interfaces</name>
+  <version>0.0.0</version>
+  <description>ROS2 Jazzy C++ basics — custom action/service/message interfaces</description>
+  <maintainer email="andi.zhou@gmail.com">jiaren</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Build tools: invoked by colcon to configure and compile this package -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Code generation tool: generates C++ bindings from .action/.srv/.msg definitions -->
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <!-- Runtime dependency: provides the type support libraries required to use
+       the generated interfaces at runtime (e.g. in nodes that depend on this package) -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Declares this package as an interface package so that rosidl generators
+       and downstream packages can discover and depend on it correctly -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <!-- Linting tools for automated code style checks during testing -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- Declares the build system type so colcon selects the correct build handler -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
