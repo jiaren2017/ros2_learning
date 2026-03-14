@@ -21,6 +21,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(turtlesim REQUIRED)
+find_package(std_srvs REQUIRED)
+
 
 
 # --- Executable: pose_publisher ---
@@ -53,6 +55,11 @@ ament_target_dependencies(pose_subscriber
   geometry_msgs)
 
 
+# --- Executable: turtle_reset_client ---
+add_executable(turtle_reset_client src/turtle_reset_client.cpp)
+ament_target_dependencies(turtle_reset_client 
+  rclcpp 
+  std_srvs)
 
 
 
@@ -60,7 +67,9 @@ ament_target_dependencies(pose_subscriber
 install(TARGETS 
   pose_publisher
   pose_subscriber
+  turtle_reset_client
   DESTINATION lib/${PROJECT_NAME})
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

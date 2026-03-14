@@ -14,6 +14,8 @@
   <depend>rclcpp</depend>           <!-- ROS2 C++ client library, required for all nodes -->
   <depend>geometry_msgs</depend>    <!-- Provides Twist message type for velocity commands -->
   <depend>turtlesim</depend>        <!-- Provides Pose message type for turtle position data -->
+  <depend>std_srvs</depend>         <!-- Provides Empty service type for /reset -->
+
 
   <!-- Test dependencies -->
   <test_depend>ament_lint_auto</test_depend>
