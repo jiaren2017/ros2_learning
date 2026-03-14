@@ -15,7 +15,8 @@
   <depend>geometry_msgs</depend>    <!-- Provides Twist message type for velocity commands -->
   <depend>turtlesim</depend>        <!-- Provides Pose message type for turtle position data -->
   <depend>std_srvs</depend>         <!-- Provides Empty service type for /reset -->
-
+  <depend>rclcpp_action</depend>    <!-- Provides C++ Action Client/Server library -->
+  <depend>my_interfaces</depend>    <!-- Provides specific data structure (the Goal, Feedback, and Result types).-->
 
   <!-- Test dependencies -->
   <test_depend>ament_lint_auto</test_depend>

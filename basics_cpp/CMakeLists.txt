@@ -22,6 +22,8 @@ find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(turtlesim REQUIRED)
 find_package(std_srvs REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(my_interfaces REQUIRED)
 
 
 
@@ -68,12 +70,23 @@ ament_target_dependencies(turtle_mover
   geometry_msgs)
 
 
+# turtle_arc_server
+add_executable(turtle_arc_server src/turtle_arc_server.cpp)
+ament_target_dependencies(turtle_arc_server
+  rclcpp
+  rclcpp_action
+  geometry_msgs
+  turtlesim
+  my_interfaces)
+
+
 # --- Install rules ---
 install(TARGETS 
   pose_publisher
   pose_subscriber
   turtle_reset_client
   turtle_mover
+  turtle_arc_server
   DESTINATION lib/${PROJECT_NAME})
 
 
