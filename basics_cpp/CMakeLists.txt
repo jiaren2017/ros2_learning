@@ -97,7 +97,15 @@ install(TARGETS
   turtle_mover
   turtle_arc_server
   turtle_arc_client
-  DESTINATION lib/${PROJECT_NAME})
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
+# Install launch files
+install(DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}/launch
+)
+
 
 
 if(BUILD_TESTING)
