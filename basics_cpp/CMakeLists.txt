@@ -24,6 +24,7 @@ find_package(turtlesim REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(my_interfaces REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 
 
 
@@ -85,8 +86,14 @@ add_executable(turtle_arc_client src/turtle_arc_client.cpp)
 ament_target_dependencies(turtle_arc_client
   rclcpp
   rclcpp_action
-  my_interfaces
-)
+  my_interfaces)
+
+# --- Executable: lifecycle_turtle_mover ---
+add_executable(lifecycle_turtle_mover src/lifecycle_turtle_mover.cpp)
+ament_target_dependencies(lifecycle_turtle_mover
+  rclcpp
+  rclcpp_lifecycle
+  geometry_msgs)
 
 
 # --- Install rules ---
@@ -97,6 +104,7 @@ install(TARGETS
   turtle_mover
   turtle_arc_server
   turtle_arc_client
+  lifecycle_turtle_mover 
   DESTINATION lib/${PROJECT_NAME}
 )
 

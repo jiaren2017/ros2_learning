@@ -17,6 +17,7 @@
   <depend>std_srvs</depend>         <!-- Provides Empty service type for /reset -->
   <depend>rclcpp_action</depend>    <!-- Provides C++ Action Client/Server library -->
   <depend>my_interfaces</depend>    <!-- Provides specific data structure (the Goal, Feedback, and Result types).-->
+  <depend>rclcpp_lifecycle</depend> <!-- Provides Lifecycle Node base class and managed publisher -->
 
   <!-- Test dependencies -->
   <test_depend>ament_lint_auto</test_depend>
