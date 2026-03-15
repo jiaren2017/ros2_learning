@@ -70,7 +70,7 @@ ament_target_dependencies(turtle_mover
   geometry_msgs)
 
 
-# turtle_arc_server
+# --- Executable: turtle_arc_server ---
 add_executable(turtle_arc_server src/turtle_arc_server.cpp)
 ament_target_dependencies(turtle_arc_server
   rclcpp
@@ -80,6 +80,15 @@ ament_target_dependencies(turtle_arc_server
   my_interfaces)
 
 
+# --- Executable: turtle_arc_client ---
+add_executable(turtle_arc_client src/turtle_arc_client.cpp)
+ament_target_dependencies(turtle_arc_client
+  rclcpp
+  rclcpp_action
+  my_interfaces
+)
+
+
 # --- Install rules ---
 install(TARGETS 
   pose_publisher
@@ -87,6 +96,7 @@ install(TARGETS
   turtle_reset_client
   turtle_mover
   turtle_arc_server
+  turtle_arc_client
   DESTINATION lib/${PROJECT_NAME})
 
 
